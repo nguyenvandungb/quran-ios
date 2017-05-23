@@ -42,6 +42,18 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate, GADI
         self.registerNotification()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if AppDelegate.shareInstance()?.adsTimer == nil {
+            AppDelegate.shareInstance()?.startTimer()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AppDelegate.shareInstance()?.stopTimer()
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

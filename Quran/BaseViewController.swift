@@ -27,6 +27,21 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
         Analytics.shared.showing(screen: screen)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        button.setImage(UIImage(named: "remove-ads"), for: .normal)
+        button.addTarget(self, action: #selector(self.rightButtonAction), for: .touchUpInside)
+        let rightButton = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func rightButtonAction() {
+        if let controller = UIStoryboard(name: "PurchaseStoryboard", bundle: nil).instantiateViewController(withIdentifier: "PurchaseViewController") as? PurchaseViewController {
+            self.navigationController?.present(controller, animated: true, completion: nil)
+        }
+    }
 }
 
 class BaseTableViewController: UITableViewController {

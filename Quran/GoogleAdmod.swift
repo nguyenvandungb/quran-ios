@@ -14,7 +14,7 @@ class GoogleAdmob {
             #if DEBUG
                 return "ca-app-pub-3940256099942544/2934735716"
             #else
-                return "ca-app-pub-6241639100526574/8928461442"
+                return "ca-app-pub-4607450770813571/8664160146"
             #endif
         }
     }
@@ -23,7 +23,7 @@ class GoogleAdmob {
             #if DEBUG
                 return "ca-app-pub-3940256099942544/4411468910"
             #else
-                return "ca-app-pub-6241639100526574/5835394248"
+                return "ca-app-pub-4607450770813571/1140893344"
             #endif
         }
     }
