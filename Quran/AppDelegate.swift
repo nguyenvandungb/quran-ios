@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let container: Container
     
-    private var adsTimer: VFoundation.Timer?
+    var adsTimer: VFoundation.Timer?
 
     class func shareInstance() -> AppDelegate? {
         return UIApplication.shared.delegate as? AppDelegate ?? nil
@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    private func startTimer() {
+    func startTimer() {
         adsTimer = VFoundation.Timer(interval: GoogleAdmob.secondRepeatShow, repeated: true, startNow: false, queue: DispatchQueue.main, handler: {
             NotificationCenter.default.post(
                 name: NotificationName.kNotificationFullAds.name(),
@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
-    private func stopTimer() {
+    func stopTimer() {
         adsTimer?.cancel()
         adsTimer = nil
     }
