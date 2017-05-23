@@ -322,6 +322,7 @@
 		54FD7BA81EB9342D00FA485F /* UserDefaultsSimplePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD7BA61EB9342D00FA485F /* UserDefaultsSimplePersistence.swift */; };
 		54FD7BAA1EB9377300FA485F /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FD7BA91EB9377300FA485F /* AppUpdater.swift */; };
 		5D0FC79199F8BE4D09D1164C /* Pods_SQLitePersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA36EFFE1D291107FA9AB77E /* Pods_SQLitePersistence.framework */; };
+		5D2BFE411ED41139002A77BA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2BFE401ED41139002A77BA /* StoreKit.framework */; };
 		80246698809C1776A6AC1D2E /* Pods_UIKitExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E316D282FF8EFEB064A26B /* Pods_UIKitExtension.framework */; };
 		C101DBCD1DCAEA4900BDD9EE /* JuzsMultipleSectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C101DBCC1DCAEA4900BDD9EE /* JuzsMultipleSectionDataSource.swift */; };
 		C120E69C1CE7B5AC00BAA7EA /* AyahInfoPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C120E69B1CE7B5AC00BAA7EA /* AyahInfoPersistence.swift */; };
@@ -836,6 +837,7 @@
 		54FD7BA51EB9342D00FA485F /* SimplePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplePersistence.swift; sourceTree = "<group>"; };
 		54FD7BA61EB9342D00FA485F /* UserDefaultsSimplePersistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsSimplePersistence.swift; sourceTree = "<group>"; };
 		54FD7BA91EB9377300FA485F /* AppUpdater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
+		5D2BFE401ED41139002A77BA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		63202218298A5188DAAFC6C3 /* Pods_VFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		677E77F7272383AD7D4EE74D /* Pods-VFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-VFoundation/Pods-VFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		68E316D282FF8EFEB064A26B /* Pods_UIKitExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -924,6 +926,7 @@
 				548724301DC616D700ADDE54 /* libsqlite3.tbd in Frameworks */,
 				546784181EB29DDD0012FA2C /* BatchDownloader.framework in Frameworks */,
 				5467843B1EB29FD20012FA2C /* SQLitePersistence.framework in Frameworks */,
+				5D2BFE411ED41139002A77BA /* StoreKit.framework in Frameworks */,
 				543FE00A1EB3B83800687DF8 /* UIKitExtension.framework in Frameworks */,
 				543FE0331EB3C1AC00687DF8 /* QueuePlayer.framework in Frameworks */,
 				5437D3671EB385DB00795FA9 /* VFoundation.framework in Frameworks */,
@@ -2196,6 +2199,7 @@
 		96C71D1AA1D9AFFDF1764AD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D2BFE401ED41139002A77BA /* StoreKit.framework */,
 				5487242F1DC616D700ADDE54 /* libsqlite3.tbd */,
 				06DB453FD466D51920429985 /* Pods_Quran.framework */,
 				7CBAAEAA5F6076B29DB5FE44 /* Pods_BatchDownloader.framework */,
@@ -2504,6 +2508,9 @@
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
@@ -3864,7 +3871,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.quran.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.figure.eventsdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "1eeb2cc1-8ea8-4337-aee7-5fdc00f8b640";
 				PROVISIONING_PROFILE_SPECIFIER = "Wildcard Development";
@@ -3888,7 +3895,7 @@
 				INFOPLIST_FILE = Quran/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.quran.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.figure.eventsdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ab1cc3f1-3b39-4bfc-a995-6d549c1ad679";
 				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: com.quran.ios";
