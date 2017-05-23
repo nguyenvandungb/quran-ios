@@ -28,6 +28,7 @@ class PurchaseViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        AppDelegate.shareInstance()?.configInAppPurchase()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,7 +37,7 @@ class PurchaseViewController: UIViewController {
     }
 
     @IBAction func removeAdsAction(_ sender: Any) {
-        DhtStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "com.dht.jgammarremoveads")
+        DhtStoreKit.shared().initiatePaymentRequestForProduct(withIdentifier: "quranremoveads")
     }
 
     @IBAction func restoreAdsAction(_ sender: Any) {
